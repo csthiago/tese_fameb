@@ -1,0 +1,199 @@
+---
+title: " "
+output:
+  pdf_document:
+    number_sections: TRUE
+geometry: "left = 2.5cm, right = 2cm, top = 2cm, bottom = 2cm"
+fontsize: 11pt
+header-includes:
+  - \usepackage{float}
+  - \usepackage{sectsty}
+  - \usepackage{paralist}
+  - \usepackage{setspace}\spacing{1.5}
+  - \usepackage{fancyhdr}
+  - \usepackage{lastpage}
+  - \usepackage{graphicx}
+  - \usepackage{dcolumn}
+  - \usepackage{tabularx}
+  - \usepackage{hyphenat}
+  - \usepackage{natbib}\bibliographystyle{agsm}
+  - \usepackage[nottoc, numbib]{tocbibind}
+
+bibliography: bibliography.bib
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "tese") })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(tinytex.verbose = TRUE)
+```
+
+\allsectionsfont{\centering}
+\subsectionfont{\raggedright}
+\subsubsectionfont{\raggedright}
+
+\pagenumbering{gobble}
+
+
+ \begin{titlepage}
+    \begin{center}
+      \hspace{-1cm}
+      \begin{minipage}[t]{0.125\linewidth}
+        \includegraphics[height=7em]{fig/logo_univ.pdf}
+      \end{minipage}      
+      \hspace{0.1cm}
+      \begin{minipage}[t]{0.73\linewidth}
+        \begin{center}
+          \vspace{-5.5em}
+          \textbf{\large Universidade Federal da Bahia}\\
+          \vspace{0.4em}%
+          \textbf{\large Faculdade de Medicina}\\ 
+          \vspace{0.4em}
+          \textbf{\small Programa de Pós-Graduação em Ciências da Saúde}
+        \end{center}
+      \end{minipage}      
+    \hspace{0.1cm}
+      \begin{minipage}[t]{0.125\linewidth}
+        \includegraphics[height=7.5em]{fig/logo_fac.pdf}
+      \end{minipage}\\
+    \end{center}
+  \vspace{2.05cm}
+  \begin{center}
+    \MakeUppercase{\bf Titulo}\par
+  \vspace*{4cm}
+  \begin{flushright}
+  {\bf Thiago Cerqueira Silva}
+  \end{flushright}
+  \vspace{4cm}
+  \textbf{Doutorado\ de\ XXXX }
+  \end{center}
+  \vspace*{2.1cm}
+  \vspace*{\fill}
+  \begin{center}
+  \vspace{1.5 cm}
+  \normalsize
+  mm yy
+  \end{center}
+\end{titlepage}
+
+<!-- SContra capa -->
+  \begin{titlepage}
+    \begin{center}
+      \hspace{-1cm}
+      \begin{minipage}[t]{0.125\linewidth}
+        \includegraphics[height=7em]{fig/logo_univ.pdf}
+      \end{minipage}      
+      \hspace{0.1cm}
+      \begin{minipage}[t]{0.73\linewidth}
+        \begin{center}
+          \vspace{-5.5em}
+          \textbf{\large Universidade Federal da Bahia}\\
+          \vspace{0.4em}
+          \textbf{\large Faculdade de Medicina da Bahia}\\
+          \vspace{0.4em}
+          \textbf{\small Programa de Pós-Graduação em Ciências da Saúde}
+        \end{center}
+      \end{minipage}      
+    \hspace{0.1cm}
+      \begin{minipage}[t]{0.125\linewidth}
+        \includegraphics[height=7.5em]{fig/logo_fac.pdf}
+      \end{minipage}\\
+    \end{center}
+  \vspace{1.05cm}
+  \begin{center}
+      \MakeUppercase{\bf Título}\par
+  \vspace*{3cm}
+  \nohyphens{{Thiago}\ {Cerqueira Silva}}\par
+  \end{center}
+  \vspace*{2.1cm}
+  \begin{flushright}
+  \begin{minipage}{8.45cm}
+  {Tese de Doutorado apresentada ao programa de Pós-Graduação em Ciências da Saúde, 
+Faculdade de Medicina da Bahia, da Universidade Federal da Bahia, como parte dos 
+requisitos necessários à obtenção do título de Doutor em Ciências da Saúde.}\par
+  \vspace*{7.5mm}
+  Orientadores: \par
+  Viviane
+  \end{minipage}\par
+  \end{flushright}
+  \vspace*{\fill}
+  \begin{center}
+  \vspace{1.5 cm}
+  \normalsize
+  mm yy
+  \end{center}
+\end{titlepage}
+  
+
+\newpage
+
+\pagenumbering{gobble}
+
+\begin{centering}
+
+{\bf Abstract}
+
+\end{centering}
+
+\spacing{1.5}
+
+(the spacing is set to 1.5)
+
+no more than 250 words for the abstract
+
+- a description of the research question/knowledge gap – what we know and what we don’t know
+- how your research has attempted to fill this gap
+- a brief description of the methods
+- brief results
+- key conclusions that put the research into a larger context
+
+\pagenumbering{roman}
+
+\newpage
+
+\centering
+\raggedright
+\newpage
+\tableofcontents
+
+\newpage
+
+```{r acknowledgments, child='acknowledgments.Rmd'}
+```
+
+\newpage
+
+```{r intro, child = 'introduction.Rmd'}
+```
+\pagenumbering{arabic}
+
+\newpage
+
+```{r methods, child = 'methods.Rmd'}
+```
+
+\newpage
+
+```{r results, child = 'results.Rmd'}
+```
+
+\newpage
+
+```{r discussion, child = 'discussion.Rmd'}
+```
+
+\newpage
+
+```{r conclusion, child = 'conclusion.Rmd'}
+```
+
+\newpage
+
+```{r biblio, child = 'bibliography.Rmd'}
+```
+
+\newpage
+
+```{r appendix, child = 'appendix.Rmd'}
+```
