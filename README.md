@@ -24,6 +24,12 @@ Recomendo trocar o repositório CTAN do tinytex para algum localizado no Brasil.
 tinytex::tlmgr(c('option', 'repository',
 'http://linorg.usp.br/CTAN/systems/texlive/tlnet/'))
 ```
+Para melhor formatação dos códigos:
+instalar a biblioteca formatR
+```{r, echo = F}
+library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=80),tidy=TRUE)
+```
 
 
 Os parâmetros da capa/contra-capa estão no arquivo Tese e na sua maioria em LaTeX.
